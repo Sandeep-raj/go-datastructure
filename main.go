@@ -9,5 +9,5 @@ import (
 func main() {
 	log.Print("Hello")
 	//dummy.Demo()
-	recursion.TestCrossword()
+	recursion.TestCryptArthmatic()
 }
