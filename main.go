@@ -8,6 +8,6 @@ import (
 
 func main() {
 	log.Print("Hello")
-	//dummy.Demo()
-	recursion.TestCoinChangeCombinations2()
+	// dummy.Test()
+	recursion.TestMaxGold()
 }

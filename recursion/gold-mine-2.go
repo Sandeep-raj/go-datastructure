@@ -12,6 +12,19 @@ Gold Mine - 2
 6. Each cell has a value that is the amount of gold available in the cell.
 7. You are required to identify the maximum amount of gold that can be dug out from the mine if
      you start and stop collecting gold from any position in the grid that has some gold.
+
+Sample Input
+6
+6
+0 1 4 2 8 2
+4 3 6 5 0 4
+1 2 4 1 4 6
+2 0 7 3 2 2
+3 1 5 9 2 4
+2 7 0 8 5 1
+
+Sample Output
+120
 */
 
 func TestGoldMine() {
