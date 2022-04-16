@@ -3,11 +3,12 @@ package main
 import (
 	"log"
 
-	"github.com/Sandeep-raj/go-datastructure/recursion"
+	stacksandqueues "github.com/Sandeep-raj/go-datastructure/stacksAndQueues"
 )
 
 func main() {
 	log.Print("Hello")
 	// dummy.Test()
-	recursion.TestMaxGold()
+	// recursion.TestMaxGold()
+	stacksandqueues.TestNSEL()
 }

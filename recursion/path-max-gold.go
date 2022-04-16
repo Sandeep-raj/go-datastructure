@@ -25,10 +25,13 @@ Sample Output
 */
 
 func TestMaxGold() {
-	inpArr := make([][]int, 0)
-	inpArr = append(inpArr, []int{0, 6, 0})
-	inpArr = append(inpArr, []int{5, 8, 7})
-	inpArr = append(inpArr, []int{0, 9, 0})
+	inpArr := make([][]int, 6)
+	inpArr[0] = []int{0, 1, 4, 2, 8, 2}
+	inpArr[1] = []int{4, 3, 6, 5, 0, 4}
+	inpArr[2] = []int{1, 2, 4, 1, 4, 6}
+	inpArr[3] = []int{2, 0, 7, 3, 2, 2}
+	inpArr[4] = []int{3, 1, 5, 9, 2, 4}
+	inpArr[5] = []int{2, 7, 0, 8, 5, 1}
 
 	traversePath := make([][]int, len(inpArr))
 
