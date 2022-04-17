@@ -10,5 +10,5 @@ func main() {
 	log.Print("Hello")
 	// dummy.Test()
 	// recursion.TestMaxGold()
-	stacksandqueues.TestNSEL()
+	stacksandqueues.TestMaxRectangle()
 }
