@@ -1,6 +1,11 @@
 package stacksandqueues
 
-import "github.com/Sandeep-raj/go-datastructure/utils"
+import (
+	"errors"
+	"log"
+
+	"github.com/Sandeep-raj/go-datastructure/utils"
+)
 
 /*
 Design A Stack With Increment Operation
@@ -41,22 +46,74 @@ exit
 
 type IncStack struct {
 	ElemStack *utils.Stack
-	IncStack  *utils.Stack
+	IncStack  []int
 	Count     int
 }
 
 func initIncStack() *IncStack {
 	return &IncStack{
 		ElemStack: utils.InitStack(),
-		IncStack:  utils.InitStack(),
+		IncStack:  []int{},
 		Count:     0,
 	}
 }
 
 func (is *IncStack) push(val int) {
+	is.ElemStack.Push(val)
+	is.IncStack = append(is.IncStack, 0)
+	is.Count++
+}
 
+func (is *IncStack) pop() (int, error) {
+	if is.Count == 0 {
+		return -1, errors.New("stack is empty")
+	}
+
+	tempVal, _ := is.ElemStack.Pop()
+	currVal := tempVal.(int) + is.IncStack[is.Count-1]
+	if is.Count > 1 {
+		is.IncStack[is.Count-2] = is.IncStack[is.Count-2] + is.IncStack[is.Count-1]
+	}
+	is.IncStack = is.IncStack[:is.Count-1]
+	is.Count--
+
+	return currVal, nil
+}
+
+func (is *IncStack) inc(k int, val int) {
+	if k > is.Count {
+		is.IncStack[is.Count-1] = val
+		return
+	}
+
+	is.IncStack[k-1] = val
 }
 
 func TestIncrementStack() {
+	incStack := initIncStack()
+	incStack.push(1)
+	incStack.push(2)
+
+	val, _ := incStack.pop()
+	log.Print(val)
+
+	incStack.push(2)
+	incStack.push(3)
+	incStack.push(4)
+
+	incStack.inc(5, 100)
+	incStack.inc(2, 100)
+
+	val, _ = incStack.pop()
+	log.Print(val)
+	val, _ = incStack.pop()
+	log.Print(val)
+	val, _ = incStack.pop()
+	log.Print(val)
+	val, _ = incStack.pop()
+	log.Print(val)
+
+	val, _ = incStack.pop()
+	log.Print(val)
 
 }
