@@ -10,6 +10,6 @@ func main() {
 	log.Print("Hello")
 	// dummy.Test()
 	// recursion.TestMaxGold()
-	stacksandqueues.TestbaseballGame()
+	stacksandqueues.TestMaxStack()
 
 }

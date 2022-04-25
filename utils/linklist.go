@@ -1,6 +1,9 @@
 package utils
 
-import "errors"
+import (
+	"errors"
+	"log"
+)
 
 type LLNode struct {
 	Key  int
@@ -52,6 +55,7 @@ func (ll *LinkedList) AddRear(data LLNode) int {
 		return ll.Count
 	} else {
 		ll.Rear.Next = &data
+		ll.Rear = ll.Rear.Next
 		ll.Count++
 		return ll.Count
 	}
@@ -92,6 +96,7 @@ func (ll *LinkedList) RemoveRear() (*LLNode, error) {
 			temp = temp.Next
 		}
 		temp.Next = nil
+		ll.Rear = temp
 		ll.Count--
 
 		currVal.Next = nil
@@ -142,4 +147,28 @@ func (ll *LinkedList) ElementExist(key int) bool {
 	}
 
 	return false
+}
+
+func (ll *LinkedList) PeekFront() (*LLNode, error) {
+	if ll.Count == 0 {
+		return nil, errors.New("empty linked list")
+	} else {
+		return ll.Head, nil
+	}
+}
+
+func (ll *LinkedList) PeekRear() (*LLNode, error) {
+	if ll.Count == 0 {
+		return nil, errors.New("empty linked list")
+	} else {
+		return ll.Rear, nil
+	}
+}
+
+func (ll *LinkedList) PrintLL() {
+	temp := ll.Head
+	for temp != nil {
+		log.Print(temp.Key)
+		temp = temp.Next
+	}
 }
