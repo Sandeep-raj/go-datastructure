@@ -134,6 +134,17 @@ func (ll *LinkedList) GetElement(key int) (*LLNode, error) {
 	return res, nil
 }
 
+func (ll *LinkedList) PeekElementAt(index int) *LLNode {
+	temp := ll.Head
+
+	for temp != nil && index > 0 {
+		temp = temp.Next
+		index--
+	}
+
+	return temp
+}
+
 func (ll *LinkedList) ElementExist(key int) bool {
 	if ll.Count == 0 {
 		return false

@@ -3,13 +3,14 @@ package main
 import (
 	"log"
 
-	stacksandqueues "github.com/Sandeep-raj/go-datastructure/stacksAndQueues"
+	"github.com/Sandeep-raj/go-datastructure/linkedlist"
 )
 
 func main() {
 	log.Print("Hello")
 	// dummy.Test()
 	// recursion.TestMaxGold()
-	stacksandqueues.TestMaxStack()
-
+	// stacksandqueues.TestMaxStack()
+	linkedlist.TestQuickSortLL()
+	// bst.TestLRViewBT()
 }
