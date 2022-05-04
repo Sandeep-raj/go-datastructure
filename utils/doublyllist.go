@@ -35,6 +35,7 @@ func InitDll() *Dll {
 	}
 }
 
+// Add first DLL
 func (dll *Dll) DllInsertFront(node *Dll_node) {
 	if dll.Count == 0 {
 		dll.Front = node
@@ -48,11 +49,15 @@ func (dll *Dll) DllInsertFront(node *Dll_node) {
 	dll.Count++
 }
 
+// ADD last DLL
 func (dll *Dll) DllInsertRear(node *Dll_node) {
 	if dll.Count == 0 {
 		dll.Front = node
 		dll.Rear = node
 	} else {
+		node.Next = nil
+		node.Prev = nil
+
 		dll.Rear.Next = node
 		node.Prev = dll.Rear
 		dll.Rear = node
@@ -61,6 +66,7 @@ func (dll *Dll) DllInsertRear(node *Dll_node) {
 	dll.Count++
 }
 
+// Remove first DLL
 func (dll *Dll) DllRemoveFront() (*Dll_node, error) {
 	if dll.Count == 0 {
 		return nil, errors.New("doubly linked list empty")
@@ -84,6 +90,7 @@ func (dll *Dll) DllRemoveFront() (*Dll_node, error) {
 	}
 }
 
+// Remove last DLL
 func (dll *Dll) DllRemoveRear() (*Dll_node, error) {
 	if dll.Count == 0 {
 		return nil, errors.New("doubly linked list empty")
@@ -107,6 +114,7 @@ func (dll *Dll) DllRemoveRear() (*Dll_node, error) {
 	}
 }
 
+//Remove node DLL
 func (dll *Dll) DllRemoveNode(node *Dll_node) {
 	prevNode := node.Prev
 	nextNode := node.Next
@@ -136,6 +144,7 @@ func (dll *Dll) GetSize() int {
 	return dll.Count
 }
 
+// Get At DLL
 func (dll *Dll) GetElement(key int) (*Dll_node, error) {
 	if dll.Count == 0 {
 		return nil, errors.New("doubly linklist empty")
@@ -192,6 +201,7 @@ func (dll *Dll) DllElementExist(key int) bool {
 	return false
 }
 
+// Get first
 func (dll *Dll) DllPeakFront() *Dll_node {
 	if dll.Count == 0 {
 		return nil
@@ -200,6 +210,7 @@ func (dll *Dll) DllPeakFront() *Dll_node {
 	return dll.Front
 }
 
+// Get last
 func (dll *Dll) DllPeakRear() *Dll_node {
 	if dll.Count == 0 {
 		return nil
@@ -208,6 +219,7 @@ func (dll *Dll) DllPeakRear() *Dll_node {
 	return dll.Rear
 }
 
+// Print DLL
 func (dll *Dll) PrintDll() {
 	temp := dll.Front
 
@@ -216,3 +228,10 @@ func (dll *Dll) PrintDll() {
 		temp = temp.Next
 	}
 }
+
+// Add At DLL
+// Remove At DLL
+// Add before DLL
+// Add after DLL
+// Remove after DLL
+// Remove before DLL

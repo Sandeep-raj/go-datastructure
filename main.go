@@ -11,6 +11,6 @@ func main() {
 	// dummy.Test()
 	// recursion.TestMaxGold()
 	// stacksandqueues.TestMaxStack()
-	linkedlist.TestQuickSortLL()
+	linkedlist.TestLRUCache()
 	// bst.TestLRViewBT()
 }
