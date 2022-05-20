@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/Sandeep-raj/go-datastructure/linkedlist"
+	patternsearchalgorithm "github.com/Sandeep-raj/go-datastructure/pattern_search_algorithm"
 )
 
 func main() {
@@ -11,6 +11,7 @@ func main() {
 	// dummy.Test()
 	// recursion.TestMaxGold()
 	// stacksandqueues.TestMaxStack()
-	linkedlist.TestLRUCache()
+	//linkedlist.TestLRUCache()
 	// bst.TestLRViewBT()
+	patternsearchalgorithm.TestHorsPool()
 }
