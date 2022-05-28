@@ -29,7 +29,7 @@ func (pq *PQ) Add(obj PQObj) {
 		for currIndex > 0 {
 			parentIndex := int((currIndex - 1) / 2)
 			if pq.Queue[parentIndex].Key > pq.Queue[currIndex].Key {
-				swap(pq.Queue, parentIndex, currIndex)
+				pqswap(pq.Queue, parentIndex, currIndex)
 				currIndex = parentIndex
 			} else {
 				break
@@ -63,7 +63,7 @@ func (pq *PQ) Remove() (*PQObj, error) {
 	}
 }
 
-func swap(arr []PQObj, index1 int, index2 int) {
+func pqswap(arr []PQObj, index1 int, index2 int) {
 	temp := arr[index1]
 	arr[index1] = arr[index2]
 	arr[index2] = temp
@@ -82,7 +82,7 @@ func PercolateDown(arr []PQObj) {
 			if arr[currIndex].Key <= arr[leftChild].Key {
 				return
 			} else {
-				swap(arr, currIndex, leftChild)
+				pqswap(arr, currIndex, leftChild)
 				currIndex = leftChild
 			}
 		} else {
@@ -96,7 +96,7 @@ func PercolateDown(arr []PQObj) {
 			if arr[currIndex].Key <= arr[tempIndex].Key {
 				return
 			} else {
-				swap(arr, currIndex, tempIndex)
+				pqswap(arr, currIndex, tempIndex)
 				currIndex = tempIndex
 			}
 		}

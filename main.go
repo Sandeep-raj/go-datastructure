@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	patternsearchalgorithm "github.com/Sandeep-raj/go-datastructure/pattern_search_algorithm"
+	dynamicprog "github.com/Sandeep-raj/go-datastructure/dynamic_prog"
 )
 
 func main() {
@@ -13,5 +13,7 @@ func main() {
 	// stacksandqueues.TestMaxStack()
 	//linkedlist.TestLRUCache()
 	// bst.TestLRViewBT()
-	patternsearchalgorithm.TestHorsPool()
+	// patternsearchalgorithm.TestHorsPool()
+	dynamicprog.TestBuySellStocks2Trans()
+	//utils.QuickSortTest()
 }
